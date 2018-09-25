@@ -14,3 +14,7 @@ void Animal::Fight(Animal &opponent) {
 	}
 }
 
+std::string Dog::get_sound(){
+	return sound_;
+}
+

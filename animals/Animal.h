@@ -34,6 +34,7 @@ public:
 	Animal("arf");
 	{}
 
+	std::string get_sound();
 	int GetPower() {return 4};
 }
 

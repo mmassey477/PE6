@@ -3,16 +3,13 @@ CXXFLAGS	= -std=c++11 -Wall
 CXXTESTFLAGS = --coverage # can be used to generate files that help calculate unit test coverage
 CXXGDB = -ggdb
 
-all: test
+all: animal
 
 clean:
-	rm test # Rectangle.o (because you can't recompile this one!)
+	rm animal # Rectangle.o (because you can't recompile this one!)
 
-test: Rectangle.o test.cpp
-	$(CXX) $(CXXFLAGS) test.cpp Rectangle.o -o test
+animal: Animal.o main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp Animal.o -o animal
 
-cov: Rectangle.o test.cpp
-	$(CXX) $(CXXFLAGS) $(CXXTESTFLAGS) test.cpp Rectangle.o -o test
-
-#Rectangle.o: Rectangle.cpp
-#	$(CXX) $(CXXFLAGS) -c Rectangle.cpp
+Animal.o: Animal.cpp
+	$(CXX) $(CXXFLAGS) -c Animal.cpp
